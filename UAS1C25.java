@@ -1,3 +1,4 @@
+//(YANUAR ALDA BARAN, 244107060016, 25)
 import java.util.Scanner;
 
 public class UAS1C25 {
