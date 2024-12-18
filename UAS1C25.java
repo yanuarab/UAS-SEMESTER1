@@ -1,19 +1,18 @@
-//(YANUAR ALDA BARAN, 244107060016, 25)
+//Nama: YANUAR ALDA BARAN
+//NIM : 244107060016
+//No Absen : 25
+
 import java.util.Scanner;
 
 public class UAS1C25 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Masukkan dua digit terakhir NIM Anda: ");
-        int duaDigitTerakhir25 = sc.nextInt();
-        int jumlahTim25 = (duaDigitTerakhir25 % 3) + 4;
-        
+
         String[] namaTim25 = new String[4];
         int[][] skor25 = new int[4][2];
         int[] totalSkor25 = new int[4];
-        int bonusBuff25 = 25; 
-        
+        int bonusBuff25 = 25;
+
         boolean dataInputted25 = false;
 
         int pilihan25;
@@ -25,7 +24,7 @@ public class UAS1C25 {
             System.out.println("4. Keluar");
             System.out.print("Pilih menu (1-4): ");
             pilihan25 = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             switch (pilihan25) {
                 case 1:
@@ -38,7 +37,7 @@ public class UAS1C25 {
 
                         System.out.print("Masukkan skor " + namaTim25[i25] + " untuk Level 2: ");
                         skor25[i25][1] = sc.nextInt();
-                        sc.nextLine(); 
+                        sc.nextLine();
 
                         totalSkor25[i25] = skor25[i25][0] + skor25[i25][1];
 
@@ -58,9 +57,10 @@ public class UAS1C25 {
                     if (!dataInputted25) {
                         System.out.println("Data belum dimasukkan. Pilih menu 1 terlebih dahulu.");
                     } else {
-                        System.out.println("\nNama Tim\tLevel 1\tLevel 2\tTotal Skor");
+                        System.out.println("\nNama Tim     Level 1   Level 2   Total Skor");
+                        System.out.println("--------------------------------------------");
                         for (int i25 = 0; i25 < 4; i25++) {
-                            System.out.println(namaTim25[i25] + "\t\t" + skor25[i25][0] + "\t" + skor25[i25][1] + "\t" + totalSkor25[i25]);
+                            System.out.printf("%-12s %-9d %-9d %-9d\n", namaTim25[i25], skor25[i25][0], skor25[i25][1], totalSkor25[i25]);
                         }
                     }
                     break;
@@ -77,7 +77,7 @@ public class UAS1C25 {
                             if (totalSkor25[i25] > maxSkor25) {
                                 maxSkor25 = totalSkor25[i25];
                                 indexJuara25 = i25;
-                                seri25 = false; 
+                                seri25 = false;
                             } else if (totalSkor25[i25] == maxSkor25) {
                                 seri25 = true;
                             }
@@ -103,6 +103,7 @@ public class UAS1C25 {
 
                 case 4:
                     System.out.println("Terima kasih! Program selesai.");
+                    System.out.println("Kode diselesaikan oleh NIM: 244107060016");
                     break;
 
                 default:
