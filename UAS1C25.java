@@ -6,6 +6,9 @@ public class UAS1C25{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
+        System.out.print("Masukkan dua digit terakhir NIM Anda: ");
+        int duaDigitTerakhirNIM = sc.nextInt();
+        int jumlahTim = (duaDigitTerakhirNIM % 3) + 4;
         
         String[] namaTim = new String[4];
         int[][] skor = new int[4][2];
