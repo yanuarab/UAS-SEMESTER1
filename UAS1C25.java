@@ -74,19 +74,19 @@ public class UAS1C25{
                     } else {
                         int maxSkor = totalSkor[0];
                         int indexJuara = 0;
-                        boolean seri = false;
+                        boolean seri25 = false;
 
                         for (int i = 1; i < 4; i++) {
                             if (totalSkor[i] > maxSkor) {
                                 maxSkor = totalSkor[i];
                                 indexJuara = i;
-                                seri = false; 
+                                seri25 = false; 
                             } else if (totalSkor[i] == maxSkor) {
-                                seri = true;
+                                seri25 = true;
                             }
                         }
 
-                        if (seri) {
+                        if (seri25) {
                             int maxLevel2 = skor[0][1];
                             int indexLevel2 = 0;
 
@@ -97,7 +97,7 @@ public class UAS1C25{
                                 }
                             }
 
-                            System.out.println("Selamat kepada Tim " + namaTim[indexLevel2] + " yang telah memenangkan kompetisi!");
+                            System.out.println("Selamat kepada Tim berakhir seri" + namaTim[indexLevel2] + " tim terbaik adalah YANUAR!");
                         } else {
                             System.out.println("Selamat kepada Tim " + namaTim[indexJuara] + " yang telah memenangkan kompetisi!");
                         }
