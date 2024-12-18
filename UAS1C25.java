@@ -1,23 +1,21 @@
-//(YANUAR ALDA BARAN, 244107060016, 25)
-
 import java.util.Scanner;
 
-public class UAS1C25{
+public class UAS1C25 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
         System.out.print("Masukkan dua digit terakhir NIM Anda: ");
-        int duaDigitTerakhirNIM = sc.nextInt();
-        int jumlahTim = (duaDigitTerakhirNIM % 3) + 4;
+        int duaDigitTerakhir25 = sc.nextInt();
+        int jumlahTim25 = (duaDigitTerakhir25 % 3) + 4;
         
-        String[] namaTim = new String[4];
-        int[][] skor = new int[4][2];
-        int[] totalSkor = new int[4];
-        int bonusBuff = 25; 
+        String[] namaTim25 = new String[4];
+        int[][] skor25 = new int[4][2];
+        int[] totalSkor25 = new int[4];
+        int bonusBuff25 = 25; 
         
-        boolean dataInputted = false;
+        boolean dataInputted25 = false;
 
-        int pilihan;
+        int pilihan25;
         do {
             System.out.println("\n=== MENU UTAMA ===");
             System.out.println("1. Input Data Skor Tim");
@@ -25,81 +23,79 @@ public class UAS1C25{
             System.out.println("3. Tentukan Juara Turnamen");
             System.out.println("4. Keluar");
             System.out.print("Pilih menu (1-4): ");
-            pilihan = sc.nextInt();
+            pilihan25 = sc.nextInt();
             sc.nextLine(); 
 
-            switch (pilihan) {
+            switch (pilihan25) {
                 case 1:
-                    for (int i = 0; i < 4; i++) {
-                        System.out.print("Masukkan nama tim ke-" + (i + 1) + ": ");
-                        namaTim[i] = sc.nextLine();
+                    for (int i25 = 0; i25 < 4; i25++) {
+                        System.out.print("Masukkan nama tim ke-" + (i25 + 1) + ": ");
+                        namaTim25[i25] = sc.nextLine();
 
-                        System.out.print("Masukkan skor " + namaTim[i] + " untuk Level 1: ");
-                        skor[i][0] = sc.nextInt();
+                        System.out.print("Masukkan skor " + namaTim25[i25] + " untuk Level 1: ");
+                        skor25[i25][0] = sc.nextInt();
 
-                        System.out.print("Masukkan skor " + namaTim[i] + " untuk Level 2: ");
-                        skor[i][1] = sc.nextInt();
+                        System.out.print("Masukkan skor " + namaTim25[i25] + " untuk Level 2: ");
+                        skor25[i25][1] = sc.nextInt();
                         sc.nextLine(); 
 
-                        
-                        totalSkor[i] = skor[i][0] + skor[i][1];
+                        totalSkor25[i25] = skor25[i25][0] + skor25[i25][1];
 
-                        if (skor[i][0] > 50 && skor[i][1] > 50) {
-                            totalSkor[i] += bonusBuff;
+                        if (skor25[i25][0] > 50 && skor25[i25][1] > 50) {
+                            totalSkor25[i25] += bonusBuff25;
                         }
 
-                        if (totalSkor[i] % 2 == 0) {
-                            totalSkor[i] -= 15;
+                        if (totalSkor25[i25] % 2 == 0) {
+                            totalSkor25[i25] -= 15;
                         }
                     }
-                    dataInputted = true;
+                    dataInputted25 = true;
                     System.out.println("Data skor berhasil dimasukkan!");
                     break;
 
                 case 2:
-
-                    if (!dataInputted) {
+                    if (!dataInputted25) {
                         System.out.println("Data belum dimasukkan. Pilih menu 1 terlebih dahulu.");
                     } else {
                         System.out.println("\nNama Tim\tLevel 1\tLevel 2\tTotal Skor");
-                        for (int i = 0; i < 4; i++) {
-                            System.out.println(namaTim[i] + "\t\t" + skor[i][0] + "\t" + skor[i][1] + "\t" + totalSkor[i]);
+                        for (int i25 = 0; i25 < 4; i25++) {
+                            System.out.println(namaTim25[i25] + "\t\t" + skor25[i25][0] + "\t" + skor25[i25][1] + "\t" + totalSkor25[i25]);
                         }
                     }
                     break;
 
                 case 3:
-                    if (!dataInputted) {
+                    if (!dataInputted25) {
                         System.out.println("Data belum dimasukkan. Pilih menu 1 terlebih dahulu.");
                     } else {
-                        int maxSkor = totalSkor[0];
-                        int indexJuara = 0;
+                        int maxSkor25 = totalSkor25[0];
+                        int indexJuara25 = 0;
                         boolean seri25 = false;
 
-                        for (int i = 1; i < 4; i++) {
-                            if (totalSkor[i] > maxSkor) {
-                                maxSkor = totalSkor[i];
-                                indexJuara = i;
+                        for (int i25 = 1; i25 < 4; i25++) {
+                            if (totalSkor25[i25] > maxSkor25) {
+                                maxSkor25 = totalSkor25[i25];
+                                indexJuara25 = i25;
                                 seri25 = false; 
-                            } else if (totalSkor[i] == maxSkor) {
+                            } else if (totalSkor25[i25] == maxSkor25) {
                                 seri25 = true;
                             }
                         }
 
                         if (seri25) {
-                            int maxLevel2 = skor[0][1];
-                            int indexLevel2 = 0;
+                            int maxLeve25 = skor25[0][1];
+                            int indexLeve25 = 0;
 
-                            for (int i = 1; i < 4; i++) {
-                                if (totalSkor[i] == maxSkor && skor[i][1] > maxLevel2) {
-                                    maxLevel2 = skor[i][1];
-                                    indexLevel2 = i;
+                            for (int i25 = 1; i25 < 4; i25++) {
+                                if (totalSkor25[i25] == maxSkor25 && skor25[i25][1] > maxLeve25) {
+                                    maxLeve25 = skor25[i25][1];
+                                    indexLeve25 = i25;
                                 }
                             }
 
-                            System.out.println("Selamat kepada Tim berakhir seri" + namaTim[indexLevel2] + " tim terbaik adalah YANUAR!");
+                            System.out.println("Selamat kepada Tim berakhir seri " + namaTim25[indexLeve25] + " tim terbaik adalah YANUAR!");
                         } else {
-                            System.out.println("Selamat kepada Tim " + namaTim[indexJuara] + " yang telah memenangkan kompetisi!");
+                            System.out.println("Selamat kepada Tim " + namaTim25[indexJuara25] + " yang telah memenangkan kompetisi!");
                         }
                     }
                     break;
@@ -111,7 +107,7 @@ public class UAS1C25{
                 default:
                     System.out.println("Pilihan tidak valid! Silakan pilih menu 1-4.");
             }
-        } while (pilihan != 4);
+        } while (pilihan25 != 4);
 
         sc.close();
     }
